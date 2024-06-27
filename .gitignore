@@ -1,0 +1,94 @@
+# Ignore Visual Studio temporary files, build results, and
+# folder-based project configuration
+.vscode/
+.vs/
+
+# User-specific files
+*.rsuser
+*.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# OS-generated files
+.DS_Store
+*.swp
+*.swo
+*.bak
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Uncomment if using NuGet Package Restore
+# packages/
+*.nupkg
+*.snupkg
+.nuget/
+packages.config
+
+# .NET core dump files
+*.core
+
+# Temporary files
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# Microsoft Azure Web App publish settings
+PublishScripts/
+*.[Pp]ublish.xml
+.publishxml
+
+# macOS-specific files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+*._.
+
+# Folder config file
+Desktop.ini
+.Desktop
+.DS_Store
+.fseventsd
+._*
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
