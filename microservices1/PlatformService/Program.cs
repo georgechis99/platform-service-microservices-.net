@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
+using PlatformService.SyncDataService.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +13,20 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 //Dependency Injected Services
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 
+builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+
+Console.WriteLine($"--> CommandService Endpoint: {builder.Configuration["CommandService"]}");
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(80); // Listen on port 80
+});
 
 var app = builder.Build();
 
@@ -27,7 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
